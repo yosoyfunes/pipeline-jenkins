@@ -4,7 +4,7 @@ pipeline {
         stage('etapa1') {
             steps {
                 echo "Ejecutar el informe de sistema" 
-                bash './informe_del_sistema.sh'
+                sh './informe_del_sistema.sh'
             }
         }
     }
