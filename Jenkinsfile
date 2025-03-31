@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters{
+        string(name: 'process_name', defaultValue: 'Jenkins', description: 'Introduce process name that you want to find')
+    }
     stages {
         stage('agregar permisos') {
             steps {
@@ -10,7 +13,7 @@ pipeline {
         stage('etapa1') {
             steps {
                 echo "Ejecutar el informe de sistema" 
-                sh './informe_del_sistema.sh'
+                sh "./informe_del_sistema.sh ${params.process_name}"
             }
         }
     }
